@@ -1,0 +1,13 @@
+architect:
+  - mtran
+decrypt:
+  settings.xml: "repo/settings.xml.asc"
+  pubring.gpg: "repo/pubring.gpg.asc"
+  secring.gpg: "repo/secring.gpg.asc"
+release:
+  commanders:
+    - mtran
+  script: |
+    mvn versions:set "-DnewVersion=${tag}"
+    git commit -am "${tag}"
+    mvn clean deploy --settings /home/r/settings.xml
