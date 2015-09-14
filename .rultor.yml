@@ -4,6 +4,8 @@ decrypt:
   settings.xml: "repo/settings.xml.asc"
   pubring.gpg: "repo/pubring.gpg.asc"
   secring.gpg: "repo/secring.gpg.asc"
+docker:
+  image: "teamed/docker-java-8"
 release:
   commanders:
     - mtran
