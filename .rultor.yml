@@ -8,7 +8,7 @@ docker:
   image: "teamed/docker-java-8"
 release:
   commanders:
-    - mtran
+    - matthiastran
   script: |
     mvn versions:set "-DnewVersion=${tag}"
     git commit -am "${tag}"
