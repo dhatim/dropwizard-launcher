@@ -1,5 +1,5 @@
 architect:
-  - mtran
+  - matthiastran
 decrypt:
   settings.xml: "repo/settings.xml.asc"
   pubring.gpg: "repo/pubring.gpg.asc"
