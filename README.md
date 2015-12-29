@@ -1,20 +1,19 @@
 # dropwizard-launcher
-Maven plugin to start and stop dropwizard servers in a separate process
+Maven plugin to start and stop dropwizard servers in a separate process.
 This plugin is on maven central.
-The server is launched in a separate jvm, so it is easy get integration test coverage.
 
 ## USAGE
 
 dropwizard-launcher-maven-plugin has two goals :
-- launch-dropwizard : allows to start dropwizard server
-- stop-dropwizard : allows to stop dropwizard server
+- launch-dropwizard : starts a dropwizard server
+- stop-dropwizard : stops the dropwizard server started by launch-dropwizard
 
-launch-dropwizard goal has three different parameters :
-- jarFile : is the dropwizard jar file
-- jvmarg : is a list of options for the jvm
-- confFile : is a YAML configuration file
+launch-dropwizard can take three parameters :
+- jarFile : path to the dropwizard jar file
+- jvmarg : options for the jvm
+- confFile : the server YAML configuration file
 
-stop-dropwizard goal has no parameters and can stop the previous dropwizard server started by launch-dropwizard goal.
+stop-dropwizard has no parameter.
 
 ## POM example :
 ```xml
