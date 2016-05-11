@@ -7,15 +7,19 @@ import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
 import org.apache.maven.plugins.annotations.Mojo;
+import org.apache.maven.plugins.annotations.Parameter;
 
 @Mojo(name = "stop-dropwizard")
 public class DropwizardStopperMojo extends AbstractMojo {
+
+    @Parameter
+    private int stopPort = 44156;
 
     @Override
     public void execute() throws MojoExecutionException, MojoFailureException {
         Socket socket;
         try {
-            socket = new Socket("localhost", 44156);
+            socket = new Socket("localhost", stopPort);
         } catch (IOException ex) {
             throw new MojoFailureException("socket connection error", ex);
         }

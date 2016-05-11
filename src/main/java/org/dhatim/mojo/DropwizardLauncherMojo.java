@@ -28,13 +28,16 @@ public class DropwizardLauncherMojo extends AbstractMojo {
     @Parameter
     private List jvmarg = new ArrayList<>();
 
+    @Parameter
+    private int stopPort = 44156;
+
     @Override
     public void execute() throws MojoExecutionException, MojoFailureException {
         // create command to be launched
         List<String> command = new ArrayList<>();
         command.add("java");
         Optional.ofNullable(jvmarg).ifPresent(l -> command.addAll(l));
-        command.add("-DSTOP.PORT=44156");
+        command.add("-DSTOP.PORT=" + stopPort);
         command.add("-DSTOP.KEY=stop_key");
         command.add("-jar");
         command.add(jarFile);
