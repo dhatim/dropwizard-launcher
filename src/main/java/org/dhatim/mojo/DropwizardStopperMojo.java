@@ -15,8 +15,15 @@ public class DropwizardStopperMojo extends AbstractMojo {
     @Parameter
     private int stopPort = 44156;
 
+    @Parameter
+    private boolean skip;
+
     @Override
     public void execute() throws MojoExecutionException, MojoFailureException {
+        if (skip) {
+            return;
+        }
+
         Socket socket;
         try {
             socket = new Socket("localhost", stopPort);

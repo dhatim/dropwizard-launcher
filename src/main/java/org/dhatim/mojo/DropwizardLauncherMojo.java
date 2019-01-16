@@ -31,12 +31,19 @@ public class DropwizardLauncherMojo extends AbstractMojo {
     @Parameter
     private int stopPort = 44156;
 
+    @Parameter
+    private boolean skip;
+
     @Override
     public void execute() throws MojoExecutionException, MojoFailureException {
+        if (skip) {
+            return;
+        }
+
         // create command to be launched
         List<String> command = new ArrayList<>();
         command.add("java");
-        Optional.ofNullable(jvmarg).ifPresent(l -> command.addAll(l));
+        Optional.ofNullable(jvmarg).ifPresent(command::addAll);
         command.add("-DSTOP.PORT=" + stopPort);
         command.add("-DSTOP.KEY=stop_key");
         command.add("-jar");
