@@ -1,7 +1,7 @@
 # dropwizard-launcher
 [![Build Status](https://travis-ci.org/dhatim/dropwizard-launcher.png?branch=master)](https://travis-ci.org/dhatim/dropwizard-launcher)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.dhatim/dropwizard-launcher/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.dhatim/dropwizard-launcher)
-[![Javadocs](https://www.javadoc.io/badge/org.dhatim/dropwizard-launcher.svg)](https://www.javadoc.io/doc/org.dhatim/dropwizard-launcher)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.dhatim/dropwizard-launcher-maven-plugin/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.dhatim/dropwizard-launcher-maven-plugin)
+[![Javadocs](https://www.javadoc.io/badge/org.dhatim/dropwizard-launcher-maven-plugin.svg)](https://www.javadoc.io/doc/org.dhatim/dropwizard-launcher-maven-plugin)
 
 Maven plugin to start and stop dropwizard servers in a separate process.
 
