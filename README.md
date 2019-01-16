@@ -1,6 +1,9 @@
 # dropwizard-launcher
+[![Build Status](https://travis-ci.org/dhatim/dropwizard-launcher.png?branch=master)](https://travis-ci.org/dhatim/dropwizard-launcher)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.dhatim/dropwizard-launcher/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.dhatim/dropwizard-launcher)
+[![Javadocs](https://www.javadoc.io/badge/org.dhatim/dropwizard-launcher.svg)](https://www.javadoc.io/doc/org.dhatim/dropwizard-launcher)
+
 Maven plugin to start and stop dropwizard servers in a separate process.
-This plugin is on maven central.
 
 ## USAGE
 
@@ -10,6 +13,7 @@ The dropwizard-launcher-maven-plugin has two goals:
 
 Common configuration parameters:
 - `stopPort` (default 44156): port used to notify the dropwizard server it must shut down. Use a projet-specific port to avoid conflicts. Under the hood this parameter sets the [`STOP.PORT` jetty parameter](https://wiki.eclipse.org/Jetty/Howto/Secure_Termination).
+-  `skip` (default `false`): skip plugin execution.
 
 Goal `launch-dropwizard` can take three parameters:
 - `jarFile`: path to the dropwizard jar file
@@ -23,9 +27,10 @@ Goal `stop-dropwizard` has no parameter.
 <plugin>
   <groupId>org.dhatim</groupId>
   <artifactId>dropwizard-launcher-maven-plugin</artifactId>
-  <version>1.0.0</version>
+  <version>1.1.0</version>
   <configuration>
       <stopPort>45678</stopPort>
+      <skip>${skipITs}</skip>
   </configuration>
   <executions>
       <execution>
